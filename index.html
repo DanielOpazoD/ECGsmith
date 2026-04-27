@@ -14,6 +14,12 @@
     <span class="current">Portada</span>
   </nav>
   <div class="spacer"></div>
+  <button class="topbtn topbtn-search" type="button" onclick="window.openSearch()" aria-label="Buscar">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+    <span class="search-label">Buscar…</span>
+    <kbd class="search-kbd">⌘K</kbd>
+  </button>
+  
   <a class="topbtn" href="apendices/reglas-ecuaciones.html">Reglas</a>
   <a class="topbtn" href="apendices/glosario.html">Glosario</a>
   <button class="menu-toggle" aria-label="Menú">☰</button>
@@ -200,6 +206,7 @@
     </footer>
   </main>
 </div>
+<script src="js/search-index.js"></script>
 <script src="js/nav.js"></script>
 </body>
 </html>
