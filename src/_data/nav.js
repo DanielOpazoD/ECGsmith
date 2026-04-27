@@ -63,6 +63,12 @@ export default {
           shortTitle: "aVR · tronco · 3v",
           title: "Patrón aVR — lesión del tronco y 3 vasos",
         },
+        {
+          slug: "12-signos-sutiles",
+          num: "12",
+          shortTitle: "Signos sutiles",
+          title: "Signos sutiles complementarios",
+        },
       ],
     },
     {
@@ -94,6 +100,18 @@ export default {
           shortTitle: "STEMI mimics",
           title: "STEMI mimics",
         },
+        {
+          slug: "13-toxicologia",
+          num: "13",
+          shortTitle: "Toxicología cardíaca",
+          title: "Toxicología cardíaca",
+        },
+        {
+          slug: "14-hereditarios-electrolitos",
+          num: "14",
+          shortTitle: "Hereditarios + electrolitos",
+          title: "Síndromes hereditarios y trastornos electrolíticos",
+        },
       ],
     },
   ],
@@ -115,6 +133,12 @@ export default {
       letter: "C",
       shortTitle: "Patrones equivalentes",
       title: "Patrones equivalentes STEMI",
+    },
+    {
+      slug: "lectura-sistematica",
+      letter: "D",
+      shortTitle: "Lectura sistemática",
+      title: "Lectura sistemática del ECG",
     },
   ],
 };
