@@ -1,0 +1,175 @@
+---
+layout: layouts/chapter.njk
+permalink: /apendice/reglas/
+slug: reglas
+order: 11
+letter: "A"
+title: "Reglas y ecuaciones"
+crumb: "A · Reglas y ecuaciones"
+part: "Caja de herramientas clínica"
+lead: |
+  Una caja de herramientas de bolsillo: las fórmulas que usarás más a menudo, con calculadoras integradas, los puntos de corte que cambian la conducta clínica y notas sobre cuándo cada regla aplica y cuándo no.
+stats:
+  - "🧮 3 calculadoras interactivas"
+  - "📋 7 reglas clave"
+  - "📍 Referencia rápida en consulta"
+prev:
+  url: /cap/11-stemi-mimics/
+  label: "11 · STEMI mimics"
+next:
+  url: /apendice/glosario/
+  label: "B · Glosario"
+keywords: ["reglas", "ecuaciones", "fórmula", "Smith", "4 variables", "Sgarbossa", "QTc", "Bazett", "Fridericia", "Brugada algoritmo", "aVR Vereckei", "Sokolow", "Cornell", "HVI", "calculadora"]
+---
+<h2>1 · Fórmula de 4 variables (Smith)</h2>
+      <p>
+        Diferencia OMI de la DA frente a repolarización precoz benigna. Aplica cuando hay elevación
+        &lt; 5 mm en V2–V4 sin Q, sin HVI y sin BRI. Score ≥ 18,2 favorece oclusión aguda.
+      </p>
+      <div class="calc">
+        <div class="calc-head">
+          <span class="pill">Calculadora</span>
+          <h3>Smith 4-variable</h3>
+        </div>
+        <div class="row">
+          <div>
+            <label>QTc (ms)</label>
+            <input type="number" id="qtc" placeholder="ej. 410">
+          </div>
+          <div>
+            <label>QRS en V2 (mm)</label>
+            <input type="number" id="qrsv2" step="0.5" placeholder="ej. 9">
+          </div>
+          <div>
+            <label>R en V4 (mm)</label>
+            <input type="number" id="rv4" step="0.5" placeholder="ej. 8">
+          </div>
+          <div>
+            <label>STE a 60 ms en V3 (mm)</label>
+            <input type="number" id="ste60v3" step="0.5" placeholder="ej. 2.5">
+          </div>
+        </div>
+        <button onclick="calcSmith4()">Calcular score</button>
+        <div id="resultSmith" class="result" style="display:none"></div>
+      </div>
+
+      <h2>2 · Sgarbossa modificada (Smith)</h2>
+      <p>OMI en presencia de BRI o ritmo de marcapasos. Se considera positiva si hay <em>cualquiera</em> de:</p>
+      <ol>
+        <li>Elevación concordante del ST ≥ 1 mm en derivación con QRS positivo.</li>
+        <li>Descenso concordante del ST ≥ 1 mm en V1, V2 o V3.</li>
+        <li>Razón ST/S ≤ −0,25 en cualquier derivación con QRS predominantemente negativo.</li>
+      </ol>
+      <div class="calc">
+        <div class="calc-head">
+          <span class="pill">Calculadora</span>
+          <h3>Razón ST/S</h3>
+        </div>
+        <label>Elevación del ST en mm (en derivación con QRS negativo)</label>
+        <input type="number" id="stMm" step="0.5" placeholder="ej. 3.5">
+        <label>Profundidad de la onda S en mm (valor absoluto)</label>
+        <input type="number" id="sMm" step="0.5" placeholder="ej. 12">
+        <button onclick="calcSgarbossa()">Calcular razón</button>
+        <div id="resultSg" class="result" style="display:none"></div>
+      </div>
+
+      <h2>3 · QTc — fórmulas de corrección</h2>
+      <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Fórmula</th><th>Cálculo</th><th>Comentario</th></tr></thead>
+        <tbody>
+          <tr><td>Bazett</td><td>QT / √RR</td><td>Sobreestima en taquicardia, infraestima en bradicardia</td></tr>
+          <tr><td>Fridericia</td><td>QT / ∛RR</td><td>Mejor en frecuencias extremas; preferida en QT prolongado farmacológico</td></tr>
+          <tr><td>Hodges</td><td>QT + 1,75 (FC − 60)</td><td>Lineal, simple</td></tr>
+          <tr><td>Framingham</td><td>QT + 0,154 (1 − RR)</td><td>Buena en arritmias supraventriculares</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="calc">
+        <div class="calc-head">
+          <span class="pill">Calculadora</span>
+          <h3>QTc (Bazett & Fridericia)</h3>
+        </div>
+        <div class="row">
+          <div>
+            <label>QT medido (ms)</label>
+            <input type="number" id="qt" placeholder="ej. 400">
+          </div>
+          <div>
+            <label>FC (lpm)</label>
+            <input type="number" id="fc" placeholder="ej. 75">
+          </div>
+        </div>
+        <button onclick="calcQTc()">Calcular QTc</button>
+        <div id="resultQT" class="result" style="display:none"></div>
+      </div>
+      <div class="box pearl">
+        <div class="icon">★</div>
+        <div class="body">
+          <span class="label">QTc largo</span>
+          <div class="text">&gt; 460 ms en mujeres y &gt; 450 ms en hombres es prolongado. &gt; 500 ms es franco riesgo de Torsades. Recuerda revisar magnesio, potasio y los fármacos QT-prolongadores (macrólidos, fluoroquinolonas, antipsicóticos, antiarrítmicos clase IA y III, ondansetrón).</div>
+        </div>
+      </div>
+
+      <h2>4 · Algoritmo de Brugada (TV vs TSV con aberrancia)</h2>
+      <ol>
+        <li>¿Ausencia de RS en todas las precordiales (V1–V6)? <strong>Sí → TV</strong>.</li>
+        <li>Si hay RS, ¿inicio de R a nadir de S &gt; 100 ms en alguna precordial? <strong>Sí → TV</strong>.</li>
+        <li>¿Disociación AV, capturas o fusiones? <strong>Sí → TV</strong>.</li>
+        <li>¿Criterios morfológicos no compatibles con BRI/BRD típico (V1 y V6)? <strong>Sí → TV</strong>.</li>
+        <li>Si todo es no → <strong>TSV con aberrancia</strong>.</li>
+      </ol>
+
+      <h2>5 · Algoritmo aVR (Vereckei)</h2>
+      <ol>
+        <li>¿Onda R monofásica inicial en aVR? <strong>Sí → TV</strong>.</li>
+        <li>¿R o Q inicial &gt; 40 ms en aVR? <strong>Sí → TV</strong>.</li>
+        <li>¿Empastamiento en la rama descendente del QRS dominante en aVR? <strong>Sí → TV</strong>.</li>
+        <li>¿Vi/Vt ≤ 1 (velocidad inicial ≤ velocidad terminal)? <strong>Sí → TV</strong>.</li>
+        <li>Ninguno se cumple → <strong>TSV con aberrancia</strong>.</li>
+      </ol>
+
+      <h2>6 · Criterios de HVI</h2>
+      <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Criterio</th><th>Cálculo</th><th>Punto de corte</th></tr></thead>
+        <tbody>
+          <tr><td>Sokolow-Lyon</td><td>S V1 + R V5 o V6</td><td>≥ 35 mm</td></tr>
+          <tr><td>Cornell (hombre)</td><td>R aVL + S V3</td><td>≥ 28 mm</td></tr>
+          <tr><td>Cornell (mujer)</td><td>R aVL + S V3</td><td>≥ 20 mm</td></tr>
+          <tr><td>R en aVL</td><td>Amplitud absoluta</td><td>≥ 11 mm</td></tr>
+        </tbody>
+      </table>
+      </div>
+
+      <h2>7 · Wellens — criterios clínicos</h2>
+      <ol>
+        <li>Antecedente de dolor torácico anginoso reciente.</li>
+        <li>Asintomático o con dolor en remisión al momento del ECG.</li>
+        <li>Onda T bifásica (tipo A) o profundamente invertida y simétrica (tipo B) en V2–V3.</li>
+        <li>Sin Q ni pérdida significativa de R, ST isoeléctrico o mínimamente elevado.</li>
+        <li>Marcadores de necrosis normales o levemente elevados.</li>
+      </ol>
+
+      <h2>8 · ECG en TEP — score apropiado</h2>
+      <p>
+        El sistema más útil al pie de la cama: contar T invertidas. <strong>T invertidas en V1 + DIII</strong>
+        en el contexto adecuado (disnea súbita, hipoxemia, taquicardia) tiene buena especificidad
+        para sobrecarga aguda del VD. Otros hallazgos que suman: BRD nuevo, S1Q3T3, fibrilación
+        auricular nueva. La <strong>ausencia</strong> de cambios no descarta TEP: hasta 30% tienen
+        ECG normal.
+      </p>
+
+      <h2>9 · Umbrales clásicos de STEMI (referencia)</h2>
+      <p>Para contraste con el paradigma OMI; recuérdalo como punto de partida, no como verdad final.</p>
+      <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Localización</th><th>Hombres ≥ 40</th><th>Hombres &lt; 40</th><th>Mujeres</th></tr></thead>
+        <tbody>
+          <tr><td>V2–V3</td><td>≥ 2 mm</td><td>≥ 2,5 mm</td><td>≥ 1,5 mm</td></tr>
+          <tr><td>Otras derivaciones</td><td colspan="3">≥ 1 mm en dos contiguas</td></tr>
+          <tr><td>V7–V9 (posterior)</td><td colspan="3">≥ 0,5 mm</td></tr>
+          <tr><td>V3R–V4R (VD)</td><td colspan="3">≥ 0,5 mm (≥ 1 mm en hombres &lt; 30)</td></tr>
+        </tbody>
+      </table>
+      </div>

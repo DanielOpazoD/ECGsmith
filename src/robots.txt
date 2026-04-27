@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://danielopazo.github.io/ECGsmith/sitemap.xml

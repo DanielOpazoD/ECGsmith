@@ -1,0 +1,21 @@
+{
+  "name": "ecg-libro",
+  "version": "2.0.0",
+  "description": "El ECG del Clínico — libro digital adaptado de Dr. Smith's ECG Blog",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "lightningcss --minify src/css/style.css -o _site/css/style.css",
+    "build:js": "esbuild src/js/main.js --bundle --minify --outfile=_site/js/main.bundle.js --target=es2020",
+    "build:11ty": "eleventy",
+    "build": "npm run clean && npm run build:11ty && npm run build:css && npm run build:js",
+    "clean": "rm -rf _site",
+    "dev": "eleventy --serve --port=8080",
+    "serve": "npx http-server _site -p 8080"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "esbuild": "^0.24.0",
+    "lightningcss-cli": "^1.27.0"
+  }
+}

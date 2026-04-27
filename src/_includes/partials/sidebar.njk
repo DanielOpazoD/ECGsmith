@@ -1,0 +1,34 @@
+<aside class="sidebar" id="sidebar">
+  <div class="side-title">Inicio</div>
+  <ul class="toc">
+    <li>
+      <a href="/" class="{% if page.url == '/' %}active{% endif %}">
+        <span class="num">★</span>Portada
+      </a>
+    </li>
+  </ul>
+  {% for part in nav.parts %}
+    <div class="side-title">{{ part.title }}</div>
+    <ul class="toc">
+      {% for cap in part.chapters %}
+        {%- set capUrl = "/cap/" + cap.slug + "/" -%}
+        <li>
+          <a href="{{ capUrl }}" class="{% if page.url == capUrl %}active{% endif %}">
+            <span class="num">{{ cap.num }}</span>{{ cap.shortTitle }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+  <div class="side-title">Apéndices</div>
+  <ul class="toc">
+    {% for app in nav.appendices %}
+      {%- set appUrl = "/apendice/" + app.slug + "/" -%}
+      <li>
+        <a href="{{ appUrl }}" class="{% if page.url == appUrl %}active{% endif %}">
+          <span class="num">{{ app.letter }}</span>{{ app.shortTitle }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</aside>

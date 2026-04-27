@@ -1,6 +1,8 @@
 .DS_Store
 *.log
 node_modules/
+_site/
 .idea/
 .vscode/
 .claude/
+.eleventy.cache/

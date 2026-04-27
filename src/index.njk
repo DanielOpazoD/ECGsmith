@@ -1,0 +1,81 @@
+---
+layout: layouts/base.njk
+permalink: /
+title: ""
+crumb: "Portada"
+description: "Libro digital navegable con lecciones, reglas y casos de electrocardiografía clínica adaptados del Dr. Smith's ECG Blog."
+keywords: ["portada", "inicio", "tabla de contenido", "libro digital", "ECG"]
+---
+<section class="cover">
+  <span class="badge">Libro digital · {{ site.edition }}</span>
+  <h1>{{ site.title }}</h1>
+  <p class="tagline">
+    Una guía moderna, basada en evidencia y orientada a decisiones clínicas:
+    del paradigma OMI a las trampas que confunden hasta a los expertos.
+  </p>
+  <div class="actions">
+    <a class="btn btn-primary" href="/cap/01-omi-stemi/">Comenzar a leer →</a>
+    <a class="btn btn-secondary" href="/apendice/reglas/">Calculadoras y reglas</a>
+  </div>
+</section>
+
+<div class="hero-stats">
+  <div class="hero-stat"><span class="v">11</span><span class="l">Capítulos</span></div>
+  <div class="hero-stat"><span class="v">3</span><span class="l">Apéndices</span></div>
+  <div class="hero-stat"><span class="v">60+</span><span class="l">Imágenes reales</span></div>
+  <div class="hero-stat"><span class="v">3</span><span class="l">Calculadoras</span></div>
+</div>
+
+<section class="toc-section">
+  <h2>Tabla de contenido</h2>
+  <p class="subtitle">Tres partes pensadas para leerse en orden o consultarse al pie de la cama.</p>
+
+  {% for part in nav.parts %}
+    <div class="section-heading">{{ part.title }}</div>
+    <div class="toc-grid">
+      {% for cap in part.chapters %}
+        <a class="toc-card" href="/cap/{{ cap.slug }}/">
+          <span class="num">CAPÍTULO {{ cap.num }}</span>
+          <span class="title">{{ cap.title }}</span>
+          <span class="desc">{{ cap.shortTitle }}</span>
+          <span class="arrow">Leer capítulo →</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+  <div class="section-heading">Apéndices</div>
+  <div class="toc-grid">
+    {% for app in nav.appendices %}
+      <a class="toc-card" href="/apendice/{{ app.slug }}/">
+        <span class="num">APÉNDICE {{ app.letter }}</span>
+        <span class="title">{{ app.title }}</span>
+        <span class="desc">{{ app.shortTitle }}</span>
+        <span class="arrow">Abrir apéndice →</span>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="box pearl">
+    <div class="icon">★</div>
+    <div class="body">
+      <span class="label">Cómo leer este libro</span>
+      <div class="text">
+        <p>Cada capítulo está pensado para 12–18 minutos. Las cajas de color son señales para detenerse: <strong>tip</strong> (verde) refuerza una regla práctica; <strong>perla</strong> (violeta) destaca un concepto sutil; <strong>alerta</strong> (ámbar) marca una trampa frecuente; <strong>caso</strong> (rojo) presenta una viñeta clínica con su lección.</p>
+        <p style="margin:0">Usa <kbd>←</kbd> y <kbd>→</kbd> para navegar entre capítulos; <kbd>⌘K</kbd> o <kbd>/</kbd> para buscar; el progreso de lectura se muestra en la barra superior. Los apéndices funcionan también como referencia rápida en consulta.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="box warn">
+    <div class="icon">!</div>
+    <div class="body">
+      <span class="label">Aviso clínico</span>
+      <div class="text">Material educativo derivado del contenido publicado por <a href="{{ site.blogSource }}" target="_blank">Dr. Smith's ECG Blog</a> bajo licencia <em>Creative Commons Attribution-NonCommercial 4.0</em>. No reemplaza el juicio clínico, los protocolos institucionales ni las guías oficiales (AHA, ESC, ACC). Verifica siempre dosis y contraindicaciones farmacológicas antes de aplicar cualquier tratamiento aquí mencionado.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Libro digital adaptado · Atribución a <a href="{{ site.blogSource }}" target="_blank">Dr. Smith's ECG Blog</a> · {{ site.license }} · 2026
+</footer>

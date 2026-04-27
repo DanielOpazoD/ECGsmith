@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+---
+<article class="page">
+  <header class="chapter-head">
+    <div class="chapter-meta">
+      <span class="pill">{% if chapter %}Capítulo {{ chapter }}{% elif letter %}Apéndice {{ letter }}{% endif %}</span>
+      <span>{{ part }}</span>
+    </div>
+    <h1 class="chapter-title">{{ title }}</h1>
+    {% if lead %}<p class="lead">{{ lead | safe }}</p>{% endif %}
+    {% if stats %}
+      <div class="head-stats">
+        {% for stat in stats %}<span>{{ stat | safe }}</span>{% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  {{ content | safe }}
+
+  {% if prev or next %}
+    <nav class="chapter-nav">
+      {% if prev %}
+        <a class="prev" href="{{ prev.url }}">
+          <span class="nav-label">← Anterior</span>
+          <span class="nav-title">{{ prev.label }}</span>
+        </a>
+      {% else %}<span></span>{% endif %}
+      {% if next %}
+        <a class="next" href="{{ next.url }}">
+          <span class="nav-label">Siguiente →</span>
+          <span class="nav-title">{{ next.label }}</span>
+        </a>
+      {% else %}<span></span>{% endif %}
+    </nav>
+  {% endif %}
+</article>
+<footer>Adaptado de <a href="{{ site.blogSource }}" target="_blank" rel="noopener">Dr. Smith's ECG Blog</a> · {{ site.license }} · 2026</footer>

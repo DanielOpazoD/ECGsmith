@@ -1,0 +1,20 @@
+<header class="topbar">
+  <a href="/" class="brand"><span class="dot"></span>El ECG del Clínico</a>
+  <nav class="crumbs">
+    {% if page.url != '/' %}
+      <a href="/">Portada</a>
+      <span class="sep">/</span>
+    {% endif %}
+    <span class="current">{{ crumb or title }}</span>
+  </nav>
+  <div class="spacer"></div>
+  <button class="topbtn topbtn-search" type="button" onclick="window.openSearch()" aria-label="Buscar">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+    <span class="search-label">Buscar…</span>
+    <kbd class="search-kbd">⌘K</kbd>
+  </button>
+  <a class="topbtn" href="/apendice/reglas/">Reglas</a>
+  <a class="topbtn" href="/apendice/glosario/">Glosario</a>
+  <button class="menu-toggle" aria-label="Menú">☰</button>
+</header>
+<div class="progress"><span></span></div>
