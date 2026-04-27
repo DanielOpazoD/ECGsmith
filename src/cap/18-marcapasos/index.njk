@@ -1,0 +1,327 @@
+---
+layout: layouts/chapter.njk
+permalink: /cap/18-marcapasos/
+slug: 18-marcapasos
+order: 16
+chapter: "18"
+title: "Marcapasos: lectura, capture, PMT y runaway"
+crumb: "18 · Marcapasos"
+part: "Parte III · Imitadores y trampas"
+lead: |
+  Cuatro escenarios cubren el 90% de los problemas con marcapasos en urgencias:
+  <strong>marcapasos transitorio externo</strong> (transcutáneo y transvenoso),
+  <strong>fallo de captura</strong>, <strong>taquicardia mediada por marcapasos (PMT)</strong>
+  y <strong>runaway pacemaker</strong>. Reconocer el patrón ECG decide la conducta inmediata.
+stats:
+  - "⏱ ~14 min de lectura"
+  - "🎯 Patrón → diagnóstico → acción"
+  - "📍 Imán, programación, ECG seriado"
+prev:
+  url: /cap/17-repol-arritmica/
+  label: "17 · Repol arrítmica"
+next:
+  url: /apendice/reglas/
+  label: "A · Reglas y ecuaciones"
+keywords:
+  - marcapasos
+  - transcutáneo
+  - TCP
+  - transvenoso
+  - capture
+  - failure to capture
+  - failure to sense
+  - oversensing
+  - undersensing
+  - PMT
+  - pacemaker mediated tachycardia
+  - runaway
+  - imán
+  - magnet
+  - mode switch
+---
+
+<h2>1 · Marcapasos transitorio externo</h2>
+<p>
+  Indicaciones agudas: bradicardia sintomática refractaria a atropina, BAV de alto grado
+  con compromiso hemodinámico, asistolia con ritmo de escape inestable, intoxicación por
+  bloqueadores AV con bradicardia profunda. La mayoría de las veces se inicia con
+  <strong>marcapasos transcutáneo (TCP)</strong> y se transita al <strong>transvenoso</strong>
+  cuando el paciente lo tolera o cuando la TCP no captura.
+</p>
+
+<h3>Marcapasos transcutáneo — ajuste práctico</h3>
+<ul>
+  <li><strong>FC objetivo</strong>: 60–80 lpm en general; ajustar según hemodinamia.</li>
+  <li><strong>Modo "demand"</strong> preferido: solo estimula si el ritmo intrínseco cae
+      bajo el umbral.</li>
+  <li><strong>Salida (mA)</strong>: empezar en 50 mA y subir 10 mA cada 5 segundos hasta
+      lograr captura mecánica (pulso palpable + onda de presión arterial concordante con
+      la espícula).</li>
+  <li><strong>Sedación</strong> imprescindible: la TCP duele. Midazolam + fentanilo o
+      ketamina en bolo.</li>
+  <li><strong>Verificar captura mecánica</strong>: no basta con captura eléctrica en el
+      monitor — palpa pulso o usa la onda de pulsioximetría/línea arterial. La captura
+      eléctrica sin mecánica es un engaño frecuente.</li>
+</ul>
+
+<div class="box pearl">
+  <div class="icon">★</div>
+  <div class="body">
+    <span class="label">Perla — captura eléctrica vs mecánica</span>
+    <div class="text">El monitor puede mostrar espículas seguidas de un complejo ancho que parece capture; pero si no hay pulso ni curva de tensión arterial concordante, hay solo <strong>captura eléctrica</strong> y el paciente está en parada hemodinámica funcional. Verifica siempre con palpación, ecografía de cabecera o línea arterial.</div>
+  </div>
+</div>
+
+<figure class="ecg real">
+  <div class="img-wrap">
+    <span class="badge-real">TCP · capture</span>
+    <a class="post-link" href="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/" target="_blank" rel="noopener" title="Ver post original">Original</a>
+    <img class="zoomable"
+         src="https://drsmithsecgblog.com/wp-content/uploads/2018/11/ECG0134copy.png"
+         data-post="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/"
+         alt="ECG con marcapasos transcutáneo capturando">
+  </div>
+  <figcaption>
+    Bradicardia extrema con marcapasos transcutáneo en marcha. Cada espícula está seguida de un
+    complejo ancho regular: <em>captura eléctrica</em>. Confirma <em>captura mecánica</em>
+    palpando pulso o con la onda de pulsioximetría.
+  </figcaption>
+  <div class="source">→ Post: <a href="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/" target="_blank" rel="noopener">«Extreme bradycardia — case-based lesson»</a></div>
+</figure>
+
+<h3>Marcapasos transvenoso — colocación al pie de la cama</h3>
+<ul>
+  <li>Acceso preferido: vena yugular interna derecha (trayecto recto al VD); femoral si
+      anticoagulación con riesgo de hematoma cervical.</li>
+  <li>Avanza el catéter mientras observas el ECG en derivación II del propio cable: la
+      morfología cambia al pasar por aurícula y se hace BRI cuando entra al VD.</li>
+  <li>Programa salida 5 mA al inicio, baja al umbral mínimo de captura + 2 mA de margen.</li>
+  <li>Sensibilidad: ajustar para que el dispositivo "vea" el QRS intrínseco y solo
+      estimule en demanda.</li>
+  <li>Radiografía de tórax post-colocación para confirmar posición en ápex del VD.</li>
+</ul>
+
+<h2>2 · Fallo de captura (failure to capture)</h2>
+<p>
+  La espícula del marcapasos aparece en el ECG pero <em>no</em> se sigue de un complejo
+  QRS ancho. Causas frecuentes:
+</p>
+<ul>
+  <li><strong>Desplazamiento del cable</strong>: el más común en transvenoso recién puesto.</li>
+  <li><strong>Umbral de captura aumentado</strong>: isquemia, hiperkalemia, acidosis, fibrosis
+      crónica, fármacos antiarrítmicos.</li>
+  <li><strong>Rotura del cable</strong>: causa rara pero grave.</li>
+  <li><strong>Salida insuficiente</strong>: ajusta mA al alza hasta capturar.</li>
+</ul>
+
+<figure class="ecg real">
+  <div class="img-wrap">
+    <span class="badge-real">No capture</span>
+    <a class="post-link" href="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/" target="_blank" rel="noopener" title="Ver post original">Original</a>
+    <img class="zoomable"
+         src="https://drsmithsecgblog.com/wp-content/uploads/2018/11/Pacer_not_capturing.png"
+         data-post="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/"
+         alt="ECG con espículas de marcapasos sin captura">
+  </div>
+  <figcaption>
+    Espículas regulares <em>sin</em> complejos ventriculares siguientes: fallo de captura. La
+    primera maniobra es subir la salida (mA) y verificar posición del cable. Si no captura a
+    máxima salida, sospecha desplazamiento, hiperkalemia o isquemia ostial.
+  </figcaption>
+</figure>
+
+<div class="box tip">
+  <div class="icon">✓</div>
+  <div class="body">
+    <span class="label">Tabla de captura — referencia</span>
+    <div class="text">El blog publica una tabla del paso a paso para troubleshoot de captura: revisa salida, sensibilidad, posición del cable, electrolitos (especialmente K⁺ y Mg²⁺) y descarta isquemia coronaria que pudiera elevar el umbral.</div>
+  </div>
+</div>
+
+<figure class="ecg real">
+  <div class="img-wrap">
+    <span class="badge-real">Algoritmo</span>
+    <a class="post-link" href="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/" target="_blank" rel="noopener" title="Ver post original">Original</a>
+    <img class="zoomable"
+         src="https://drsmithsecgblog.com/wp-content/uploads/2018/11/Pacingchart.png"
+         data-post="https://drsmithsecgblog.com/extreme-bradycardia-case-based-lesson/"
+         alt="Tabla de troubleshoot de marcapasos del blog">
+  </div>
+  <figcaption>
+    Tabla del blog con el paso a paso de troubleshoot de marcapasos. Cápsula útil para revisar
+    al lado de la cama mientras se ajustan los parámetros.
+  </figcaption>
+</figure>
+
+<h2>3 · Fallo de sensado (failure to sense)</h2>
+<p>
+  Dos variantes opuestas:
+</p>
+<ul>
+  <li><strong>Undersensing</strong>: el dispositivo no "ve" el QRS intrínseco y dispara
+      espículas inapropiadas, a veces sobre la T (riesgo de R-on-T y FV).</li>
+  <li><strong>Oversensing</strong>: el dispositivo confunde ruido (artefactos miopotenciales,
+      ondas T amplias) con QRS y inhibe la estimulación necesaria, produciendo bradicardia
+      sintomática.</li>
+</ul>
+
+<h2>4 · Taquicardia mediada por marcapasos (PMT)</h2>
+<p>
+  Mecanismo: una extrasístole ventricular se conduce retrógradamente al atrio. El cable
+  auricular del marcapasos detecta esa onda P retrógrada como sinusal, y dispara el cable
+  ventricular tras el intervalo AV programado. El siguiente latido ventricular vuelve a
+  conducirse retrógradamente y se establece un <strong>circuito de re-entrada
+  marcapasos-dependiente</strong>. El resultado es una taquicardia regular con QRS estimulado
+  a la frecuencia máxima programada (típicamente 110–140 lpm).
+</p>
+
+<h3>Cómo reconocerla</h3>
+<ul>
+  <li>Taquicardia regular con QRS ancho de morfología estimulada (BRI con eje superior).</li>
+  <li>Frecuencia exactamente igual a la frecuencia máxima programada del dispositivo.</li>
+  <li>Aparece tras una extrasístole o cambio del ritmo subyacente.</li>
+  <li>Antecedente de marcapasos bicameral (DDD) que detecta retrógradamente.</li>
+</ul>
+
+<figure class="ecg real">
+  <div class="img-wrap">
+    <span class="badge-real">PMT</span>
+    <a class="post-link" href="https://drsmithsecgblog.com/chest-pain-and-rapid-pacing-followed-by/" target="_blank" rel="noopener" title="Ver post original">Original</a>
+    <img class="zoomable"
+         src="https://drsmithsecgblog.com/wp-content/uploads/2024/12/Figure-1202012-lead2012-17.21-2024-USE.png"
+         data-post="https://drsmithsecgblog.com/chest-pain-and-rapid-pacing-followed-by/"
+         alt="ECG con taquicardia mediada por marcapasos (PMT) a frecuencia máxima programada">
+  </div>
+  <figcaption>
+    Paciente con marcapasos DDD presenta dolor torácico y taquicardia regular ancha a la
+    frecuencia máxima del dispositivo: <strong>PMT</strong>. La aplicación del imán
+    convierte el modo a asincrónico y rompe el circuito.
+  </figcaption>
+  <div class="source">→ Post: <a href="https://drsmithsecgblog.com/chest-pain-and-rapid-pacing-followed-by/" target="_blank" rel="noopener">«Chest pain and rapid pacing»</a></div>
+</figure>
+
+<figure class="ecg real">
+  <div class="img-wrap">
+    <span class="badge-real">Diagrama</span>
+    <a class="post-link" href="https://drsmithsecgblog.com/chest-pain-and-rapid-pacing-followed-by/" target="_blank" rel="noopener" title="Ver post original">Original</a>
+    <img class="zoomable"
+         src="https://drsmithsecgblog.com/wp-content/uploads/2024/12/Figure-220My20Ladder2012-17.21-2024.png"
+         data-post="https://drsmithsecgblog.com/chest-pain-and-rapid-pacing-followed-by/"
+         alt="Diagrama en escalera de la PMT">
+  </div>
+  <figcaption>
+    Diagrama en escalera del mismo caso explicando el circuito: extrasístole → conducción
+    retrógrada → sensado del cable atrial → estimulación ventricular → conducción retrógrada
+    de nuevo. Romper el circuito con imán o reprogramación PVARP.
+  </figcaption>
+</figure>
+
+<h3>Tratamiento agudo</h3>
+<ul>
+  <li><strong>Aplicar imán</strong> sobre el generador: convierte el modo a asincrónico (DOO o
+      VOO), ignora el sensado auricular y rompe el circuito. Es la maniobra más rápida.</li>
+  <li>Cardiología/electrofisiología prolonga el período refractario auricular post-ventricular
+      (PVARP) en la programación para evitar recurrencias.</li>
+  <li>Adenosina puede convertir terminando la conducción retrógrada, pero el imán es más fiable.</li>
+</ul>
+
+<h2>5 · Runaway pacemaker</h2>
+<p>
+  Falla rara y grave del generador en la que el dispositivo dispara espículas a frecuencias
+  extremadamente altas (200–600 lpm), pudiendo precipitar FV. Causas: agotamiento severo
+  de la batería, malfunción electrónica, daño por radiación o desfibrilación previa
+  insuficientemente protegida.
+</p>
+
+<h3>Reconocimiento y manejo</h3>
+<ul>
+  <li>Espículas a frecuencias muy altas (a menudo no logran captura completa porque el
+      miocardio entra en período refractario).</li>
+  <li>Cuadro clínico de inestabilidad hemodinámica grave o paro.</li>
+  <li><strong>Aplicar imán</strong>: en la mayoría de generadores convierte a frecuencia
+      asincrónica fija (DOO/VOO 80–100 lpm).</li>
+  <li>Si el imán no funciona: <strong>desconectar el cable del generador</strong>
+      (incisión de bolsillo y corte del cable bajo anestesia local) o reemplazo emergente.</li>
+  <li>Soporte hemodinámico mientras tanto: vasopresores, cardioversión si TV/FV inducida.</li>
+</ul>
+
+<div class="box warn">
+  <div class="icon">!</div>
+  <div class="body">
+    <span class="label">Trampa</span>
+    <div class="text">No confundas runaway pacemaker con TV. El runaway tiene <em>espículas</em> claras (aunque sin captura completa); la TV no tiene espículas. La aplicación de imán es diagnóstica y terapéutica: si todo se normaliza con el imán, era runaway.</div>
+  </div>
+</div>
+
+<h2>Imán: qué hace, cuándo aplicarlo</h2>
+<div class="tbl-wrap">
+<table>
+  <thead><tr><th>Dispositivo</th><th>Efecto del imán</th><th>Indicación práctica</th></tr></thead>
+  <tbody>
+    <tr><td>Marcapasos VVI</td><td>Modo asincrónico VOO 80–100 lpm</td><td>Romper PMT, evaluar agotamiento de batería</td></tr>
+    <tr><td>Marcapasos DDD</td><td>Modo asincrónico DOO 80–100 lpm</td><td>Romper PMT</td></tr>
+    <tr><td>DAI</td><td>Suspende terapias de descarga (no afecta estimulación)</td><td>Evitar shocks inapropiados durante cirugía o tormenta no arrítmica</td></tr>
+    <tr><td>Marcapasos transcutáneo</td><td>No aplicable</td><td>Ajustes manuales en el panel</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Caso 18.1 — PMT confundido con TV</h2>
+<div class="box case">
+  <div class="icon">⚕</div>
+  <div class="body">
+    <span class="label">Viñeta clínica</span>
+    <div class="text">
+      <p>Hombre de 78 años con marcapasos DDD por enfermedad del nodo, ingresa por palpitaciones. <strong>ECG:</strong> taquicardia regular a 130 lpm con QRS ancho y morfología estimulada (BRI con eje izquierdo, espícula visible antes de cada QRS). Hemodinámicamente estable.</p>
+      <p>El equipo se prepara para cardioversión por sospecha de TV. Antes de sedar, el cardiólogo aplica <strong>imán sobre el generador</strong>: la taquicardia se rompe inmediatamente y el ritmo vuelve a sinusal con estimulación ventricular intermitente. Diagnóstico: <strong>PMT</strong>. Reprogramación con PVARP prolongado, alta al día siguiente.</p>
+      <p><em>Lección:</em> en cualquier paciente con marcapasos y taquicardia ancha, el imán es la primera maniobra. Evita una cardioversión innecesaria y diagnostica.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Caso 18.2 — Bradicardia profunda con TCP</h2>
+<div class="box case">
+  <div class="icon">⚕</div>
+  <div class="body">
+    <span class="label">Viñeta clínica</span>
+    <div class="text">
+      <p>Mujer de 82 años, síncope, FC 28 lpm, BAV completo con escape ventricular a 25 lpm. TA 70/40. Atropina 0,5 mg sin respuesta. Se inicia <strong>TCP en modo demand</strong>, FC objetivo 70 lpm, salida ascendente: a 80 mA aparece captura eléctrica (espícula seguida de complejo ancho). Pulso radial palpable concordante: <strong>captura mecánica</strong> confirmada. Sedación con midazolam 2 mg + fentanilo 50 µg.</p>
+      <p>Traslado a sala con TCP funcionando. Implante de marcapasos transvenoso temporal, posteriormente definitivo bicameral.</p>
+      <p><em>Lección:</em> verifica siempre captura mecánica con palpación o pulsioximetría antes de declarar TCP exitosa. Sedación obligatoria — la TCP es dolorosa.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Cuadro resumen — patrón → acción</h2>
+<div class="tbl-wrap">
+<table>
+  <thead><tr><th>Patrón ECG</th><th>Diagnóstico</th><th>Acción inmediata</th></tr></thead>
+  <tbody>
+    <tr><td>Espículas sin QRS siguiente</td><td>Failure to capture</td><td>Subir mA, verificar posición del cable, descartar hiperK/isquemia</td></tr>
+    <tr><td>Espículas sobre T (R-on-T)</td><td>Undersensing</td><td>Aumentar sensibilidad, riesgo de FV</td></tr>
+    <tr><td>Bradicardia sintomática con dispositivo activo</td><td>Oversensing</td><td>Disminuir sensibilidad; evaluar ruido externo</td></tr>
+    <tr><td>Taquicardia regular ancha estimulada a frecuencia máxima</td><td>PMT</td><td>Imán; reprogramar PVARP</td></tr>
+    <tr><td>Espículas a frecuencia muy alta (&gt; 200 lpm)</td><td>Runaway</td><td>Imán; si falla, desconectar cable; soporte hemodinámico</td></tr>
+    <tr><td>Sin espículas en paciente con marcapasos</td><td>Agotamiento de batería, fallo del generador</td><td>Imán para evaluar reserva, recambio urgente</td></tr>
+  </tbody>
+</table>
+</div>
+
+<div class="quiz">
+  <div class="quiz-title">Quiz de cierre</div>
+  <div class="q">1. Captura eléctrica visible en monitor sin pulso palpable. ¿Qué pasa?</div>
+  <details><summary>Ver respuesta</summary><p>Hay <strong>captura eléctrica sin captura mecánica</strong>: el corazón está despolarizando pero no contrayendo eficazmente. Sube la salida, verifica posición, considera causas (taponamiento, hipovolemia, miocardio enfermo, hiperkalemia).</p></details>
+  <div class="q">2. Paciente con marcapasos DDD y taquicardia regular a la frecuencia máxima programada. ¿Primer paso?</div>
+  <details><summary>Ver respuesta</summary><p><strong>Aplicar imán</strong> sobre el generador. Convierte a modo asincrónico DOO y rompe el circuito de PMT. Evita cardioversión innecesaria.</p></details>
+  <div class="q">3. ¿Cuál es la causa más frecuente de fallo de captura en marcapasos transvenoso recién colocado?</div>
+  <details><summary>Ver respuesta</summary><p><strong>Desplazamiento del cable</strong>. Re-posicionar bajo control radioscópico/ECG. Otras causas: salida insuficiente, hiperkalemia o isquemia que aumentan el umbral.</p></details>
+</div>
+
+<h2>Para llevarte</h2>
+<ul>
+  <li>TCP: salida ascendente hasta lograr captura eléctrica + mecánica; sedación obligatoria.</li>
+  <li>Failure to capture: sube mA, verifica posición, descarta hiperK e isquemia.</li>
+  <li>PMT: imán como primera maniobra rompe el circuito sin cardioversión.</li>
+  <li>Runaway: imán convierte a asincrónico; si falla, desconecta cable.</li>
+  <li>Imán es diagnóstico y terapéutico: tenerlo siempre disponible junto al carro de paro.</li>
+</ul>
