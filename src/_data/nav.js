@@ -136,6 +136,12 @@ export default {
           shortTitle: "Marcapasos · troubleshooting",
           title: "Marcapasos: lectura, capture, PMT y runaway",
         },
+        {
+          slug: "19-avnrt-avrt",
+          num: "19",
+          shortTitle: "AVNRT vs AVRT",
+          title: "AVNRT vs AVRT — algoritmo morfológico",
+        },
       ],
     },
   ],
