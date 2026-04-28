@@ -489,6 +489,55 @@ code, .num-mono {
 .ecg.real figcaption { padding-top: 14px; }
 .ecg.real .source { padding-bottom: 14px; }
 
+/* ---------- figcaption estructurado: Clínica / ECG / Diagnóstico ---------- */
+.fc-structured {
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text);
+}
+.fc-structured .fc-row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  padding: 6px 0;
+}
+.fc-structured .fc-row + .fc-row {
+  border-top: 1px dashed var(--border);
+}
+.fc-structured .fc-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding-top: 3px;
+  white-space: nowrap;
+}
+.fc-structured .fc-content {
+  color: var(--text);
+}
+.fc-structured .fc-content strong { font-weight: 600; }
+.fc-structured .fc-takeaway {
+  margin-top: 8px;
+  padding: 8px 10px;
+  background: var(--bg-soft);
+  border-left: 2px solid var(--text-3);
+  border-radius: 0 4px 4px 0;
+  font-style: italic;
+  color: var(--text-2);
+  font-size: 0.86rem;
+}
+@media (max-width: 600px) {
+  .fc-structured .fc-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+  .fc-structured .fc-label {
+    padding-top: 4px;
+  }
+}
+
 /* ---------- Lightbox / visor de imágenes ---------- */
 .lightbox {
   position: fixed;
