@@ -416,23 +416,21 @@ code, .num-mono {
   filter: brightness(1.05);
 }
 .ecg.real .img-wrap::after {
-  content: '🔍 Click para ampliar';
+  content: '🔍';
   position: absolute;
-  bottom: 12px; left: 12px;
-  font-family: var(--sans);
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  background: rgba(28, 25, 23, 0.85);
+  bottom: 8px; left: 8px;
+  font-size: .7rem;
+  background: rgba(28, 25, 23, 0.7);
   color: white;
-  padding: 6px 12px;
+  padding: 3px 6px;
   border-radius: 100px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   opacity: 0;
-  transform: translateY(4px);
+  transform: translateY(2px);
   transition: opacity .2s ease, transform .2s ease;
   pointer-events: none;
+  line-height: 1;
 }
 .ecg.real .img-wrap:hover::after {
   opacity: 1;
@@ -456,38 +454,88 @@ code, .num-mono {
 }
 .ecg.real .post-link {
   position: absolute;
-  top: 12px; right: 12px;
+  top: 10px; right: 10px;
+  width: 28px;
+  height: 28px;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--sans);
-  font-size: .76rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  background: rgba(28, 25, 23, 0.78);
+  justify-content: center;
+  font-size: 0;             /* oculta cualquier texto interno ("Original") */
+  background: rgba(28, 25, 23, 0.7);
   color: white;
-  padding: 6px 12px;
-  border-radius: 100px;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50%;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,.15);
   text-decoration: none;
   z-index: 2;
   transition: background .15s ease, transform .15s ease;
+  line-height: 1;
 }
 .ecg.real .post-link:hover {
   background: var(--accent);
   color: white;
-  transform: translateY(-1px);
+  transform: scale(1.08);
   border-color: transparent;
 }
-.ecg.real .post-link::before { content: '↗'; font-size: .9rem; }
+.ecg.real .post-link::before {
+  content: '↗';
+  font-size: .9rem;
+  color: white;
+}
 .ecg.real figcaption,
 .ecg.real .source {
   padding: 0 18px;
 }
 .ecg.real figcaption { padding-top: 14px; }
 .ecg.real .source { padding-bottom: 14px; }
+
+/* ---------- case-group: agrupa serie de figuras del mismo caso ---------- */
+.case-group {
+  --case-color: #6d28d9; /* violet por defecto */
+  margin: 32px 0;
+  padding: 16px 18px 12px;
+  background: color-mix(in srgb, var(--case-color) 4%, transparent);
+  border-left: 4px solid var(--case-color);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+}
+.case-group .case-title {
+  margin: 0 0 14px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--case-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.case-group .case-title::before {
+  content: '◆';
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+.case-group .case-subtitle {
+  margin: -8px 0 14px;
+  font-family: var(--sans);
+  font-size: 0.84rem;
+  color: var(--text-2);
+  font-style: italic;
+}
+.case-group .ecg-gallery { margin: 0; }
+.case-group .ecg.real .badge-real {
+  background: var(--case-color);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--case-color) 30%, transparent);
+}
+.case-group .ecg.real .post-link:hover { background: var(--case-color); }
+
+/* Variantes de color por serie clínica */
+.case-violet  { --case-color: #6d28d9; }
+.case-rose    { --case-color: #be123c; }
+.case-amber   { --case-color: #b45309; }
+.case-emerald { --case-color: #047857; }
+.case-sky     { --case-color: #0369a1; }
+.case-fuchsia { --case-color: #a21caf; }
 
 /* ---------- figcaption estructurado: Clínica / ECG / Diagnóstico ---------- */
 .fc-structured {
@@ -497,45 +545,39 @@ code, .num-mono {
   color: var(--text);
 }
 .fc-structured .fc-row {
-  display: grid;
-  grid-template-columns: 96px 1fr;
-  gap: 12px;
-  padding: 6px 0;
+  display: block;
+  margin: 0 0 10px;
+  padding-top: 8px;
 }
+.fc-structured .fc-row:first-child { padding-top: 0; }
 .fc-structured .fc-row + .fc-row {
   border-top: 1px dashed var(--border);
 }
 .fc-structured .fc-label {
-  font-size: 0.7rem;
+  display: block;
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  padding-top: 3px;
+  margin-bottom: 3px;
   white-space: nowrap;
 }
 .fc-structured .fc-content {
+  display: block;
   color: var(--text);
 }
 .fc-structured .fc-content strong { font-weight: 600; }
 .fc-structured .fc-takeaway {
-  margin-top: 8px;
-  padding: 8px 10px;
+  margin-top: 10px;
+  padding: 8px 12px;
   background: var(--bg-soft);
   border-left: 2px solid var(--text-3);
   border-radius: 0 4px 4px 0;
   font-style: italic;
   color: var(--text-2);
-  font-size: 0.86rem;
-}
-@media (max-width: 600px) {
-  .fc-structured .fc-row {
-    grid-template-columns: 1fr;
-    gap: 2px;
-  }
-  .fc-structured .fc-label {
-    padding-top: 4px;
-  }
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 /* ---------- Lightbox / visor de imágenes ---------- */
